@@ -1,3 +1,67 @@
 <resources>
-    <string name="app_name">App 30 Days</string>
+    <string name="app_name">30 Days In Albion</string>
+
+    <!-- Day Titles -->
+    <string name="day1">Start Your Path</string>
+    <string name="day2">Learn To Use Your Weapons</string>
+    <string name="day3">Go Inside Dungeons</string>
+    <string name="day4">Gathering Sources</string>
+    <string name="day5">Craft Your Own Equipments</string>
+    <string name="day6">Realize Expeditions</string>
+    <string name="day7">Do Some Friends</string>
+    <string name="day8">Join Or Create A Guild</string>
+    <string name="day9">Complete Mobs Camps</string>
+    <string name="day10">Fight Arenas Against Others</string>
+    <string name="day11">Explore Royal Continent</string>
+    <string name="day12">Lear The History</string>
+    <string name="day13">Tourism Through Royal cities</string>
+    <string name="day14">Rest A Bit</string>
+    <string name="day15">Experiment The Trading</string>
+    <string name="day16">Join In A City Faction</string>
+    <string name="day17">Hunts Special Beasts</string>
+    <string name="day18">Gather Spirits Resources</string>
+    <string name="day19">Venture Into The Abyss</string>
+    <string name="day20">Participate In Tournaments</string>
+    <string name="day21">Reach The Far Lands</string>
+    <string name="day22">Discover The Paths Of Avalon</string>
+    <string name="day23">Follow The Wisps</string>
+    <string name="day24">Joint The Smugglers</string>
+    <string name="day25">Create A Hideout With your Guild</string>
+    <string name="day26">Assaults A Fortress</string>
+    <string name="day27">Initiates an Alliance</string>
+    <string name="day28">Investigate The Special Dungeons</string>
+    <string name="day29">Rest In Your Island</string>
+    <string name="day30">Defeat Dragons</string>
+
+    <!-- Descriptions -->
+    <string name="description1"></string>
+    <string name="description2"></string>
+    <string name="description3"></string>
+    <string name="description4"></string>
+    <string name="description5"></string>
+    <string name="description6"></string>
+    <string name="description7"></string>
+    <string name="description8"></string>
+    <string name="description9"></string>
+    <string name="description10"></string>
+    <string name="description11"></string>
+    <string name="description12"></string>
+    <string name="description13"></string>
+    <string name="description14"></string>
+    <string name="description15"></string>
+    <string name="description16"></string>
+    <string name="description17"></string>
+    <string name="description18"></string>
+    <string name="description19"></string>
+    <string name="description20"></string>
+    <string name="description21"></string>
+    <string name="description22"></string>
+    <string name="description23"></string>
+    <string name="description24"></string>
+    <string name="description25"></string>
+    <string name="description26"></string>
+    <string name="description27"></string>
+    <string name="description28"></string>
+    <string name="description29"></string>
+    <string name="description30"></string>
 </resources>

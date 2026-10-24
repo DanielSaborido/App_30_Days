@@ -21,7 +21,6 @@ object DaysRepository {
         R.string.description26, R.string.description27, R.string.description28, R.string.description29, R.string.description30
     )
 
-    // (Assuming you have an image list too, or you can use a similar approach for images)
     private val imageResList = listOf(
         R.drawable.android_day1, R.drawable.android_day2, R.drawable.android_day3, R.drawable.android_day4, R.drawable.android_day5,
         R.drawable.android_day6, R.drawable.android_day7, R.drawable.android_day8, R.drawable.android_day9, R.drawable.android_day10,

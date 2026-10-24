@@ -57,6 +57,7 @@ import com.example.app30days.ui.theme.Shapes
 @Composable
 fun DayItem(
     day: Day,
+    isDarkTheme: Boolean,
     modifier: Modifier = Modifier
 ) {
     var isFlipped by remember {
@@ -67,10 +68,10 @@ fun DayItem(
         animationSpec = tween(durationMillis = 600),
         label = "cardRotation"
     )
-    val backgroundColor = if (isSystemInDarkTheme()) {
-        Color.DarkGray // Color for dark mode
+    val backgroundColor = if (isDarkTheme) {
+        Color.DarkGray
     } else {
-        Color.LightGray // Color for light mode
+        Color.LightGray
     }
 
     Card(
@@ -192,6 +193,7 @@ fun DayItem(
 @Composable
 fun DaysScreen(
     days: List<Day> = DaysRepository.days,
+    isDarkTheme: Boolean,
     @SuppressLint("ModifierParameter") modifier: Modifier = Modifier
 ) {
     LazyColumn(
@@ -200,7 +202,10 @@ fun DaysScreen(
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         items(days) { day ->
-            DayItem(day = day)
+            DayItem(
+                day = day,
+                isDarkTheme = isDarkTheme
+            )
         }
     }
 }

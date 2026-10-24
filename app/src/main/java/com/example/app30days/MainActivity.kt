@@ -53,7 +53,8 @@ class MainActivity : ComponentActivity() {
                     }
                 ) { innerPadding ->
                     DaysScreen(
-                        modifier = Modifier.padding(innerPadding)
+                        modifier = Modifier.padding(innerPadding),
+                        isDarkTheme = isDarkTheme
                     )
                 }
             }
@@ -117,7 +118,8 @@ fun GreetingPreview() {
             }
         ) { innerPadding ->
             DaysScreen(
-                modifier = Modifier.padding(innerPadding)
+                modifier = Modifier.padding(innerPadding),
+                isDarkTheme = isDarkTheme
             )
         }
     }

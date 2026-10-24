@@ -14,9 +14,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.app30days.ui.theme.AlbionFont
 import com.example.app30days.ui.theme.App30DaysTheme
 
 class MainActivity : ComponentActivity() {
@@ -52,7 +54,10 @@ fun DaysTopAppBar(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(16.dp),
-            style = MaterialTheme.typography.displayLarge,
+            style = MaterialTheme.typography.displayLarge.copy(
+                fontFamily = AlbionFont,
+                fontWeight = FontWeight.ExtraBold
+            ),
             textAlign = TextAlign.Center,
             color = MaterialTheme.colorScheme.onPrimary
         )

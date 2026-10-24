@@ -39,9 +39,11 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.app30days.models.Day
 import com.example.app30days.models.DaysRepository
+import com.example.app30days.ui.theme.AlbionFont
 
 @Composable
 fun DayItem(
@@ -51,7 +53,6 @@ fun DayItem(
     var isFlipped by remember {
         mutableStateOf(false)
     }
-
     val rotation by animateFloatAsState(
         targetValue = if (isFlipped) 180f else 0f,
         animationSpec = tween(durationMillis = 600),
@@ -65,6 +66,9 @@ fun DayItem(
                 rotationY = rotation
                 cameraDistance = 12 * density
             },
+        onClick = {
+            isFlipped = !isFlipped
+        },
         shape = RoundedCornerShape(16.dp),
         elevation = CardDefaults.cardElevation(
             defaultElevation = 2.dp
@@ -82,24 +86,18 @@ fun DayItem(
                 ) {
                     Text(
                         text = "Day ${day.number}: ${stringResource(day.nameRes)}",
-                        style = MaterialTheme.typography.displaySmall,
+                        style = MaterialTheme.typography.displaySmall.copy(
+                            fontFamily = AlbionFont,
+                            fontWeight = FontWeight.Bold
+                        ),
                         modifier = Modifier.weight(1f)
                     )
-
-                    IconButton(
-                        onClick = {
-                            isFlipped = true
-                        }
-                    ) {
-                        Icon(
-                            imageVector = Icons.Default.ArrowForwardIos,
-                            contentDescription = "Show description"
-                        )
-                    }
+                    Icon(
+                        imageVector = Icons.Default.ArrowForwardIos,
+                        contentDescription = "Show description"
+                    )
                 }
-
                 Spacer(modifier = Modifier.height(12.dp))
-
                 Image(
                     painter = painterResource(day.imageRes),
                     contentDescription = stringResource(day.nameRes),
@@ -110,7 +108,6 @@ fun DayItem(
                         .clip(RoundedCornerShape(12.dp))
                 )
             }
-
         } else {
             Box(
                 modifier = Modifier
@@ -132,24 +129,18 @@ fun DayItem(
                     ) {
                         Text(
                             text = stringResource(day.nameRes),
-                            style = MaterialTheme.typography.titleLarge,
+                            style = MaterialTheme.typography.titleLarge.copy(
+                                fontFamily = AlbionFont,
+                                fontWeight = FontWeight.Normal
+                            ),
                             modifier = Modifier.weight(1f)
                         )
-
-                        IconButton(
-                            onClick = {
-                                isFlipped = false
-                            }
-                        ) {
-                            Icon(
-                                imageVector = Icons.Default.ArrowBackIosNew,
-                                contentDescription = "Show image"
-                            )
-                        }
+                        Icon(
+                            imageVector = Icons.Default.ArrowBackIosNew,
+                            contentDescription = "Show image"
+                        )
                     }
-
                     Spacer(modifier = Modifier.height(24.dp))
-
                     Text(
                         text = stringResource(day.descriptionRes),
                         style = MaterialTheme.typography.bodyLarge

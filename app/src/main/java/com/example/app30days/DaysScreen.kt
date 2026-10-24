@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -16,6 +17,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material.icons.Icons
@@ -98,15 +100,35 @@ fun DayItem(
                     )
                 }
                 Spacer(modifier = Modifier.height(12.dp))
-                Image(
-                    painter = painterResource(day.imageRes),
-                    contentDescription = stringResource(day.nameRes),
-                    contentScale = ContentScale.Crop,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(240.dp)
-                        .clip(RoundedCornerShape(12.dp))
-                )
+                if (day.number == 13) {
+                    Row(
+                        modifier = Modifier.horizontalScroll(
+                            rememberScrollState()
+                        )
+                    ) {
+                        DaysRepository.day13Images.forEach { imageRes ->
+                            Image(
+                                painter = painterResource(imageRes),
+                                contentDescription = stringResource(day.nameRes),
+                                contentScale = ContentScale.Crop,
+                                modifier = Modifier
+                                    .padding(end = 8.dp)
+                                    .size(240.dp)
+                                    .clip(RoundedCornerShape(12.dp))
+                            )
+                        }
+                    }
+                } else {
+                    Image(
+                        painter = painterResource(day.imageRes),
+                        contentDescription = stringResource(day.nameRes),
+                        contentScale = ContentScale.Crop,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(240.dp)
+                            .clip(RoundedCornerShape(12.dp))
+                    )
+                }
             }
         } else {
             Box(

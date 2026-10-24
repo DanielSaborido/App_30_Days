@@ -30,6 +30,14 @@ object DaysRepository {
         R.drawable.android_day26, R.drawable.android_day27, R.drawable.android_day28, R.drawable.android_day29, R.drawable.android_day30
     )
 
+    val day13Images = listOf(
+        R.drawable.android_day13,
+        R.drawable.android_day13_1,
+        R.drawable.android_day13_2,
+        R.drawable.android_day13_3,
+        R.drawable.android_day13_4
+    )
+
     val days = (1..30).map {day->
         Day(
             number = day,
